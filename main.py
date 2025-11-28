@@ -11,12 +11,11 @@ import json  # Importar json para procesar respuestas múltiples
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-app = FastAPI()
-
+app = FastAPI(title="BACKEND - Plataforma de Ejercicios de Fluidos")
 # --- CORS ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
