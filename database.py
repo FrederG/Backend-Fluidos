@@ -8,8 +8,11 @@ SQLALCHEMY_DATABASE_URL = "postgresql://postgres:uqFDEmXvhxvORCRtnWLEdNOjHNJGOoX
 
 # ---  Crear el motor ---
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL
+    SQLALCHEMY_DATABASE_URL,
+    connect_args={},
+    pool_pre_ping=True
 )
+
 
 # --- Crear la sesión local ---
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
