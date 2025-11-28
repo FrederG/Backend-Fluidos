@@ -4,11 +4,11 @@ from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 
 # ---  Conexión a la base de datos SQLite ---
-SQLALCHEMY_DATABASE_URL = "sqlite:///./fluidos.db"
+SQLALCHEMY_DATABASE_URL = "postgresql://postgres:uqFDEmXvhxvORCRtnWLEdNOjHNJGOoXQ@yamanote.proxy.rlwy.net:29033/railway"
 
 # ---  Crear el motor ---
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    SQLALCHEMY_DATABASE_URL
 )
 
 # --- Crear la sesión local ---
